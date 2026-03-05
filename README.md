@@ -23,7 +23,7 @@ I deploy AI systems that run in production — from WhatsApp sales agents proces
 </tr>
 <tr>
 <td>🎓</td>
-<td><strong>Mechatronics Engineering</strong> — Pontificia Universidad Católica del Perú</td>
+<td><strong>BSc in Mechatronics Engineering</strong> — Pontificia Universidad Católica del Perú</td>
 </tr>
 </table>
 
