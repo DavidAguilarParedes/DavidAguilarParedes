@@ -1,12 +1,23 @@
-# David Aguilar
+<h1 align="center">David Aguilar</h1>
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=24&duration=3000&pause=1000&color=FFFFFF&vCenter=true&repeat=true&width=480&lines=AI+Engineer+%C2%B7+Building+intelligent+systems" alt="Typing SVG" /></a>
+<p align="center">
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&repeat=true&width=500&lines=AI+Engineer;Building+intelligent+systems;From+prototype+to+production" alt="Typing SVG" /></a>
+</p>
 
-Senior AI Engineer with hands-on experience deploying conversational agents, RAG pipelines, and computer vision systems in production. MSc in AI from UC Chile, Mechatronics Engineering from PUCP. I build AI that works in the real world — from WhatsApp sales bots to CNN classifiers running on factory floors.
+<p align="center">
+<a href="https://www.linkedin.com/in/davidaguilarparedes/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>&nbsp;
+<a href="mailto:david.aguilar@pucp.edu.pe"><img src="https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/></a>
+</p>
 
 ---
 
-## Selected Work
+Senior AI Engineer with hands-on experience deploying conversational agents, RAG pipelines, and computer vision systems in production. I build AI that works in the real world — from WhatsApp sales bots to CNN classifiers running on factory floors.
+
+**MSc in Artificial Intelligence** — Universidad Católica de Chile &nbsp;|&nbsp; **Mechatronics Engineering** — PUCP
+
+---
+
+### Selected Work
 
 <table>
 <tr>
@@ -61,7 +72,7 @@ Real-time CNN classification + HMI + PLC Beckhoff integration on production line
 
 ---
 
-## Tech
+### Tech
 
 <p>
 <img src="https://skillicons.dev/icons?i=python,tensorflow,pytorch,fastapi,docker,postgres,opencv,linux,git,vscode&theme=dark" alt="Tech Stack" />
@@ -70,16 +81,3 @@ Real-time CNN classification + HMI + PLC Beckhoff integration on production line
 **AI/ML** &nbsp; LangChain · LangGraph · OpenAI API · Claude API · Hugging Face · FAISS · scikit-learn
 
 **Engineering** &nbsp; Docker · FastAPI · PostgreSQL · Git · Linux · Streamlit
-
----
-
-## Education
-
-**MSc in Artificial Intelligence** — Universidad Católica de Chile
-
-**Mechatronics Engineering** — Pontificia Universidad Católica del Perú (PUCP)
-
----
-
-<a href="https://www.linkedin.com/in/davidaguilarparedes/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>&nbsp;
-<a href="mailto:david.aguilar@pucp.edu.pe"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
