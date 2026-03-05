@@ -19,11 +19,11 @@ I deploy AI systems that run in production — from WhatsApp sales agents proces
 <table>
 <tr>
 <td>🎓</td>
-<td><strong>MSc in Artificial Intelligence</strong> — Universidad Católica de Chile</td>
+<td><strong>MSc in Artificial Intelligence</strong> — Pontifical Catholic University of Chile</td>
 </tr>
 <tr>
 <td>🎓</td>
-<td><strong>BSc in Mechatronics Engineering</strong> — Pontificia Universidad Católica del Perú</td>
+<td><strong>BSc in Mechatronics Engineering</strong> — Pontifical Catholic University of Peru</td>
 </tr>
 </table>
 
