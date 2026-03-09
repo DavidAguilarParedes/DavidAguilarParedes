@@ -3,7 +3,7 @@
 <h1 align="center">David Aguilar</h1>
 
 <p align="center">
-<strong>AI Engineer</strong> &nbsp;·&nbsp; Production ML Systems &nbsp;·&nbsp; Conversational AI &nbsp;·&nbsp; Industrial Automation
+<strong>Senior AI Engineer</strong> &nbsp;·&nbsp; System Architecture &nbsp;·&nbsp; Digital Transformation &nbsp;·&nbsp; Production ML
 </p>
 
 <p align="center">
@@ -13,7 +13,7 @@
 
 <br>
 
-I build AI systems that run in production — from WhatsApp sales agents processing real transactions to CNN classifiers on factory inspection lines. I focus on the full pipeline: model development, system architecture, deployment, and maintenance.
+I architect and ship AI systems that transform business operations — not prototypes. I've replaced manual clinical audits at hospitals with automated pipelines, turned WhatsApp into a sales channel with AI agents closing real transactions, and deployed computer vision on factory production lines. I make the technical decisions on model selection, system design, and infrastructure, and I own the outcome from architecture to production.
 
 <table>
 <tr>
@@ -32,7 +32,62 @@ I build AI systems that run in production — from WhatsApp sales agents process
 
 <br>
 
-## Featured Project
+## Systems I've Designed & Deployed
+
+<table>
+<tr>
+<td width="100%" valign="top">
+
+### Clinical Audit Automation — Healthcare
+<img src="https://img.shields.io/badge/Highest_Complexity-Private_Repo-6B7280?style=flat-square" alt="Private"/> <img src="https://img.shields.io/badge/Production-Deployed-00C853?style=flat-square" alt="Deployed"/>
+
+Designed and built the full AI platform that replaced manual clinical audits at a major hospital. Multi-stage pipeline: document ingestion (OCR + layout parsing), medical NLP classification, rule engine for compliance validation, and structured reporting with audit trails.
+
+**Architectural decisions I owned:**
+- Chose a hybrid extraction pipeline (OCR + layout-aware parsing) over pure LLM extraction for regulatory compliance — the system needed deterministic, auditable outputs
+- Designed the classification layer to separate medical coding from compliance rules, making each independently testable
+- Built the reporting module to generate structured outputs that integrate directly with the hospital's existing audit workflow
+
+**Business impact:** Transformed a multi-person manual process into an automated pipeline. Reduced audit processing time from days to minutes while maintaining regulatory compliance standards.
+
+`Python` `TensorFlow` `OCR` `NLP` `FastAPI` `PostgreSQL` `Docker`
+
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### WhatsApp Sales Agent — Telecom
+<img src="https://img.shields.io/badge/Production-Live-00C853?style=flat-square" alt="Live"/>
+
+Digitized the phone sales channel for a major telecom operator. Architected the agentic pipeline: intent detection, catalog recommendation with personalized pricing, CRM integration, real-time payment processing. Serving real customers via WhatsApp.
+
+**Key decisions:** LangGraph orchestration, RAG with Qdrant + CrossEncoder for objection handling, Redis-backed state with HITL confirmation flows. Designed the system to handle concurrent conversations with message buffering and per-user locking.
+
+`LangGraph` `FastAPI` `RAG` `Qdrant` `WhatsApp API` `Redis`
+
+</td>
+<td width="50%" valign="top">
+
+### Industrial Quality Control — Manufacturing
+<img src="https://img.shields.io/badge/Production-Deployed-00C853?style=flat-square" alt="Deployed"/>
+
+Brought AI to the factory floor. Real-time defect detection integrated with PLC Beckhoff automation on actual production lines. Designed the full system: CNN inference, operator HMI, and automated reject logic with hard real-time constraints.
+
+**Key decisions:** TensorFlow Lite for edge inference latency, custom protocol bridge between Python and PLC via pyads, fail-safe logic ensuring production continuity when the model is uncertain.
+
+`TensorFlow` `OpenCV` `pyads` `PLC Beckhoff` `CustomTkinter`
+
+</td>
+</tr>
+</table>
+
+<br>
+
+## Featured Open Source
 
 <table>
 <tr>
@@ -40,92 +95,44 @@ I build AI systems that run in production — from WhatsApp sales agents process
 
 ### [vendedor-ai](https://github.com/DavidAguilarParedes/vendedor-ai) — AI Sales Agent for WhatsApp
 
-End-to-end conversational sales agent: custom agentic orchestrator, 10 tools, 3 human-in-the-loop checkpoints, multi-LLM support (Claude + GPT-5 + GPT-4o). Handles the complete purchase flow — catalog browsing, product selection, address validation, delivery scheduling, and order confirmation.
+Open-source version of my production sales agent, rebuilt from scratch to demonstrate system design. Custom agentic orchestrator (no LangGraph), multi-LLM support (Claude + GPT-5 + GPT-4o), 10 tools, 3 human-in-the-loop checkpoints.
 
-**Not a wrapper around LangGraph.** The orchestrator is ~200 lines of explicit Python: agentic loop, tool execution, HITL pause/resume with Redis state, auto-actions that bypass the LLM for reliability.
+**Why I built it custom instead of using LangGraph:**
+- The original production system used LangGraph, but `create_react_agent()` hides the engineering — 15 lines of config don't show that you understand how agentic loops work
+- The custom orchestrator is ~200 lines of explicit Python: tool execution, HITL pause/resume with Redis state, auto-actions that bypass the LLM when reliability matters
+- Unified LLM abstraction that handles Anthropic and OpenAI quirks (different tool calling formats, `max_tokens` vs `max_completion_tokens`)
 
 `Claude API` `OpenAI API` `FastAPI` `Redis` `Pydantic` `Docker` `WhatsApp Cloud API`
 
 <a href="https://github.com/DavidAguilarParedes/vendedor-ai">
-<img src="https://img.shields.io/badge/View_Project-58A6FF?style=for-the-badge&logo=github&logoColor=white" alt="View Project"/>
+<img src="https://img.shields.io/badge/View_Source-58A6FF?style=for-the-badge&logo=github&logoColor=white" alt="View Source"/>
 </a>
 
 </td>
 </tr>
 <tr>
 <td>
-<img src="https://raw.githubusercontent.com/DavidAguilarParedes/vendedor-ai/master/docs/assets/panel_vendedor_ai.png" alt="vendedor-ai demo" width="100%"/>
+<img src="https://raw.githubusercontent.com/DavidAguilarParedes/vendedor-ai/master/docs/assets/panel_vendedor_ai.png" alt="vendedor-ai — WhatsApp mock + agent trace viewer" width="100%"/>
 </td>
 </tr>
 </table>
-
-<br>
-
-## Production Experience
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### WhatsApp Sales Agent — Telecom Enterprise
-Conversational AI handling live sales for a major telecom operator. Intent detection, catalog recommendation, CRM integration, payment processing. Deployed to real customers.
-
-`LangGraph` `FastAPI` `RAG` `Qdrant` `WhatsApp API` `Redis`
-
-<img src="https://img.shields.io/badge/Production-Live-00C853?style=flat-square" alt="Live"/>
-
-</td>
-<td width="50%" valign="top">
-
-### Clinical Audit Automation — Hospital
-AI pipeline that automated manual medical audits: OCR extraction, NLP classification, structured reporting. Replaced a multi-person manual process.
-
-`Python` `NLP` `TensorFlow` `OCR` `FastAPI`
-
-<img src="https://img.shields.io/badge/Production-Deployed-00C853?style=flat-square" alt="Deployed"/>
-
-</td>
-</tr>
-</table>
-
-<br>
-
-## Open Source Projects
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
 ### [Scientific RAG System](https://github.com/DavidAguilarParedes/mia-uc-chile-proyecto-aplicado-1)
-End-to-end retrieval-augmented generation for scientific literature. Document ingestion, embeddings, vector search, reranking, answer synthesis with evaluation framework.
+End-to-end RAG pipeline for scientific literature. Document ingestion, embeddings, vector search, reranking, answer synthesis with evaluation framework. MSc applied project at UC Chile.
 
 `LangChain` `FAISS` `OpenAI` `Python`
 
 </td>
 <td width="50%" valign="top">
 
-### [Industrial Quality Control](https://github.com/DavidAguilarParedes/Lab-IA-1MTR56-Automatizacion-Industrial-Inteligente)
-Real-time defect detection on production lines. CNN image classification + custom HMI + PLC Beckhoff integration. Running on actual factory equipment.
+### [Industrial QC — CNN + PLC](https://github.com/DavidAguilarParedes/Lab-IA-1MTR56-Automatizacion-Industrial-Inteligente)
+CNN image classification integrated with PLC Beckhoff for factory quality control. Custom HMI for operators, real-time inference, automated rejection.
 
 `TensorFlow` `OpenCV` `pyads` `PLC Beckhoff`
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### [Ultimate Tic-Tac-Toe RL](https://github.com/DavidAguilarParedes/ultimate-ttt-rl)
-Reinforcement learning agent for the extended tic-tac-toe variant. Self-play training with policy optimization.
-
-`Python` `Reinforcement Learning`
-
-</td>
-<td width="50%" valign="top">
-
-### [GameQuizAI](https://github.com/DavidAguilarParedes/GameQuizAI)
-Educational app that generates personalized quizzes from uploaded documents using LLMs. Interactive learning with AI-generated questions and feedback.
-
-`Python` `OpenAI API` `NLP`
 
 </td>
 </tr>
@@ -133,7 +140,7 @@ Educational app that generates personalized quizzes from uploaded documents usin
 
 <br>
 
-## Technical Skills
+## Technical Depth
 
 <p align="center">
 <img src="https://skillicons.dev/icons?i=python,tensorflow,pytorch,fastapi,docker,redis,postgres,aws,linux,git&theme=dark" alt="Tech Stack" />
@@ -141,10 +148,11 @@ Educational app that generates personalized quizzes from uploaded documents usin
 
 | Area | Technologies |
 |------|-------------|
-| **LLMs & Agents** | Claude API, OpenAI API, LangChain, LangGraph, tool use, agentic loops, RAG, HITL patterns |
-| **ML/DL** | TensorFlow, PyTorch, scikit-learn, Hugging Face, FAISS, Qdrant, computer vision |
-| **Backend** | FastAPI, Redis, PostgreSQL, Docker, REST APIs, WebSockets, async Python |
-| **Industrial** | PLC Beckhoff (TwinCAT), pyads, OPC-UA, OpenCV, SCADA, real-time HMI |
+| **LLM & Agent Systems** | Claude API, OpenAI API, LangChain, LangGraph, custom agentic loops, tool use, RAG (FAISS, Qdrant), HITL patterns, prompt engineering, multi-model orchestration |
+| **ML / Deep Learning** | TensorFlow, PyTorch, scikit-learn, Hugging Face, computer vision, NLP, OCR, document AI |
+| **System Architecture** | Microservices, async Python, FastAPI, Redis, PostgreSQL, Docker Compose, event-driven design, API design, state management |
+| **Industrial Automation** | PLC Beckhoff (TwinCAT), pyads, OPC-UA, OpenCV, SCADA, real-time inference, edge deployment |
+| **Process & Strategy** | AI system design, build-vs-buy evaluation, production readiness, technical documentation, cross-functional delivery |
 
 <br>
 
